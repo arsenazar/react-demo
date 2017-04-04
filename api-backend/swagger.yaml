@@ -1,0 +1,99 @@
+---
+swagger: "2.0"
+info:
+  description: "API for the PowerOps monitoring UI web application"
+  version: "1.0.0"
+  title: "PowerOps API"
+host: "localhost"
+basePath: "/v1"
+schemes:
+- "https"
+- "http"
+produces:
+- "application/json"
+paths:
+  /status:
+    get:
+      tags:
+      - "Status"
+      summary: "Status"
+      description: "Provides a list of status descriptions for a list of tasks expected\
+        \ today.\n"
+      operationId: "statusGET"
+      parameters: []
+      responses:
+        200:
+          description: "A list of logs from today with a status"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Status"
+      x-swagger-router-controller: "Status"
+  /status/{date}:
+    get:
+      tags:
+      - "Status"
+      summary: "Status"
+      description: "Provides a list of status description fro a list of tasks given\
+        \ a certain day.\n"
+      operationId: "statusDateGET"
+      parameters:
+      - name: "date"
+        in: "path"
+        description: "Date of transaction"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "A list of logs with a status"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Status"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Status"
+definitions:
+  Statusoverview:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      logged_date:
+        type: "string"
+  Status:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      process:
+        type: "string"
+      group:
+        type: "string"
+      kind:
+        type: "string"
+      task:
+        type: "string"
+      msg:
+        type: "string"
+      target_date:
+        type: "string"
+      time_limit:
+        type: "string"
+      ts:
+        type: "integer"
+        format: "int32"
+      status:
+        type: "string"
+  Error:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      message:
+        type: "string"
+      fields:
+        type: "string"
