@@ -1,4 +1,4 @@
 {
   "DATA_BACKEND": "nedb",
-  "NODE_ENV":"development"
+  "NODE_ENV": "development"
 }

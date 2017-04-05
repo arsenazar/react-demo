@@ -19,8 +19,6 @@ nconf
   .defaults({
     // dataBackend can be 'nedb', 'sqlite', or 'mongodb'. Be sure to
     // configure the appropriate settings for each storage engine below.
-    // If you are unsure, use datastore as it requires no additional
-    // configuration.
     DATA_BACKEND: 'nedb',
 
     // Port the HTTP server
