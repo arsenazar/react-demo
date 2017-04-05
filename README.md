@@ -26,9 +26,11 @@ Footer: copyright, contact
 __________________________
 
 - The rest api is defined in the Swagger file provided with this text file.
-Please create a REST api using Express (open for suggestions, please specify and explain!) which will display a table of timestamps, a name and a status.
+Please create a REST api using Express (open for suggestions, please specify and explain!) which will display a table 
+of timestamps, a name and a status.
 The REST api call will be limited to a time range of 1 day (provided by the date input)
 
 - Read the values from a database (SQLITE for example) that you created. 
-Please fill the database with random values for 1 week before and 1 week after so we can test the application by changing the dates.
+Please fill the database with random values for 1 week before and 1 week after so we can test the application by 
+changing the dates.
 Query the database based on a time range of 1 day and feed the rest API with this data.
