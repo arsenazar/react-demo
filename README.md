@@ -1,5 +1,5 @@
-Example task.
-======
+React Demo
+==========
 
 The resulting application should be a JavaScript / React web application querying a REST api with 1 parameter, a date.
 The REST api retrieves the data from a small database (sqlite or csv file based).
@@ -16,7 +16,7 @@ Any other package is up to you to decide.
 
 **The layout of the application is the following:**
 ______________________________________
-Menu: Enovos logo + date picker input
+Menu: Logo + date picker input
 
 timestamp | name | status 
 --------- | ---- | ------
